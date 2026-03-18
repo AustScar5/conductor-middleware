@@ -1,0 +1,53 @@
+{
+  "test": "success_path",
+  "logged_at": "2026-03-18T23:51:08.580293+00:00",
+  "terminal_result": {
+    "task_id": "c0bd9c552beb",
+    "status": "success",
+    "output": {
+      "label": "positive",
+      "confidence": 0.95,
+      "reasoning": "Strong positive language."
+    },
+    "final_error": null,
+    "verdict": {
+      "passed": true,
+      "reasons": [],
+      "validated_output": {
+        "label": "positive",
+        "confidence": 0.95,
+        "reasoning": "Strong positive language."
+      },
+      "reviewed_at": "2026-03-18T23:51:08.580273Z"
+    },
+    "attempt_state": {
+      "task_id": "c0bd9c552beb",
+      "attempt_count": 1,
+      "history": [
+        {
+          "attempt": 1,
+          "task_id": "c0bd9c552beb",
+          "dispatched_at": "2026-03-18T23:51:08.580246Z",
+          "responded_at": "2026-03-18T23:51:08.580260Z",
+          "worker_status": "complete",
+          "error": null,
+          "oracle_verdict": {
+            "passed": true,
+            "reasons": [],
+            "validated_output": {
+              "label": "positive",
+              "confidence": 0.95,
+              "reasoning": "Strong positive language."
+            },
+            "reviewed_at": "2026-03-18T23:51:08.580273Z"
+          },
+          "retry_decision": "terminate",
+          "backoff_applied_seconds": 0.0,
+          "cumulative_elapsed_seconds": 0.0
+        }
+      ],
+      "total_attempts_made": 1
+    },
+    "completed_at": "2026-03-18T23:51:08.580289Z"
+  }
+}

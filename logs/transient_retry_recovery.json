@@ -1,0 +1,91 @@
+{
+  "test": "transient_retry_recovery",
+  "logged_at": "2026-03-18T23:51:08.591123+00:00",
+  "terminal_result": {
+    "task_id": "944a492b5736",
+    "status": "success",
+    "output": {
+      "label": "positive",
+      "confidence": 0.91,
+      "reasoning": "Recovered after retry."
+    },
+    "final_error": null,
+    "verdict": {
+      "passed": true,
+      "reasons": [],
+      "validated_output": {
+        "label": "positive",
+        "confidence": 0.91,
+        "reasoning": "Recovered after retry."
+      },
+      "reviewed_at": "2026-03-18T23:51:08.591014Z"
+    },
+    "attempt_state": {
+      "task_id": "944a492b5736",
+      "attempt_count": 3,
+      "history": [
+        {
+          "attempt": 1,
+          "task_id": "944a492b5736",
+          "dispatched_at": "2026-03-18T23:51:08.590950Z",
+          "responded_at": "2026-03-18T23:51:08.590964Z",
+          "worker_status": "failed",
+          "error": {
+            "error_code": "TIMEOUT",
+            "message": "Timed out on call 1 (simulated).",
+            "attempt_count": 1,
+            "timestamp": "2026-03-18T23:51:08.590960Z",
+            "detail": null,
+            "is_transient": true
+          },
+          "oracle_verdict": null,
+          "retry_decision": "retry",
+          "backoff_applied_seconds": 0.0,
+          "cumulative_elapsed_seconds": 0.0
+        },
+        {
+          "attempt": 2,
+          "task_id": "944a492b5736",
+          "dispatched_at": "2026-03-18T23:51:08.590983Z",
+          "responded_at": "2026-03-18T23:51:08.590990Z",
+          "worker_status": "failed",
+          "error": {
+            "error_code": "TIMEOUT",
+            "message": "Timed out on call 2 (simulated).",
+            "attempt_count": 2,
+            "timestamp": "2026-03-18T23:51:08.590987Z",
+            "detail": null,
+            "is_transient": true
+          },
+          "oracle_verdict": null,
+          "retry_decision": "retry",
+          "backoff_applied_seconds": 0.0,
+          "cumulative_elapsed_seconds": 0.0
+        },
+        {
+          "attempt": 3,
+          "task_id": "944a492b5736",
+          "dispatched_at": "2026-03-18T23:51:08.590999Z",
+          "responded_at": "2026-03-18T23:51:08.591005Z",
+          "worker_status": "complete",
+          "error": null,
+          "oracle_verdict": {
+            "passed": true,
+            "reasons": [],
+            "validated_output": {
+              "label": "positive",
+              "confidence": 0.91,
+              "reasoning": "Recovered after retry."
+            },
+            "reviewed_at": "2026-03-18T23:51:08.591014Z"
+          },
+          "retry_decision": "terminate",
+          "backoff_applied_seconds": 0.0,
+          "cumulative_elapsed_seconds": 0.0
+        }
+      ],
+      "total_attempts_made": 3
+    },
+    "completed_at": "2026-03-18T23:51:08.591025Z"
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "test": "permanent_failure_stop",
+  "logged_at": "2026-03-18T23:51:08.601833+00:00",
+  "terminal_result": {
+    "task_id": "448c3d014b1d",
+    "status": "failure",
+    "output": null,
+    "final_error": {
+      "error_code": "INVALID_INPUT",
+      "message": "Instruction is structurally invalid \u2014 cannot process.",
+      "attempt_count": 1,
+      "timestamp": "2026-03-18T23:51:08.601806Z",
+      "detail": null,
+      "is_transient": false
+    },
+    "verdict": null,
+    "attempt_state": {
+      "task_id": "448c3d014b1d",
+      "attempt_count": 1,
+      "history": [
+        {
+          "attempt": 1,
+          "task_id": "448c3d014b1d",
+          "dispatched_at": "2026-03-18T23:51:08.601796Z",
+          "responded_at": "2026-03-18T23:51:08.601811Z",
+          "worker_status": "failed",
+          "error": {
+            "error_code": "INVALID_INPUT",
+            "message": "Instruction is structurally invalid \u2014 cannot process.",
+            "attempt_count": 1,
+            "timestamp": "2026-03-18T23:51:08.601806Z",
+            "detail": null,
+            "is_transient": false
+          },
+          "oracle_verdict": null,
+          "retry_decision": "escalate",
+          "backoff_applied_seconds": 0.0,
+          "cumulative_elapsed_seconds": 0.0
+        }
+      ],
+      "total_attempts_made": 1
+    },
+    "completed_at": "2026-03-18T23:51:08.601830Z"
+  }
+}
