@@ -1,0 +1,26 @@
+{
+  "disposition": "rejected",
+  "contributor": "radTxNwRggY2Gcfyrw6YWgTLNPEQwKgKD4",
+  "artifact_hash": null,
+  "stages": [
+    {
+      "stage": "verification",
+      "passed": false,
+      "reason": "summary: Field required; confidence: Field required",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T23:33:41.148517Z",
+      "detail": {
+        "field_errors": [
+          "summary: Field required",
+          "confidence: Field required"
+        ]
+      }
+    }
+  ],
+  "tx_blob": null,
+  "tx_hash": null,
+  "dry_run": true,
+  "started_at": "2026-03-19T23:33:41.148478Z",
+  "completed_at": "2026-03-19T23:33:41.148520Z",
+  "error": null
+}

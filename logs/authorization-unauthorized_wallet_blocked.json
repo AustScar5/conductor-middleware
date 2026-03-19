@@ -1,17 +1,17 @@
 {
   "scenario": "unauthorized_wallet_blocked",
-  "logged_at": "2026-03-19T22:56:29.522828+00:00",
+  "logged_at": "2026-03-19T23:33:40.767434+00:00",
   "auth_verdict": {
     "wallet_address": "0x0000000000000000000000000000000000000000",
     "status": "unauthorized",
     "reason": "Wallet address is not on the contributor allowlist.",
-    "timestamp": "2026-03-19T22:56:29.522778Z"
+    "timestamp": "2026-03-19T23:33:40.767392Z"
   },
   "adj_verdict": {
     "verdict": "fail",
     "reason": "unauthorized_contributor: Wallet address is not on the contributor allowlist. (wallet=0x0000000000000000000000000000000000000000, status=unauthorized)",
     "evidence_hash": "b9752b44ef161acbb9df3a3260ff5c5f4af6b11f3d787b797f9c876dbc9b67e3",
-    "timestamp": "2026-03-19T22:56:29.522816Z",
+    "timestamp": "2026-03-19T23:33:40.767428Z",
     "retry_eligible": false,
     "field_errors": [],
     "schema_name": "TaskOutput"

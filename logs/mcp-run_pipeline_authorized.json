@@ -1,0 +1,56 @@
+{
+  "disposition": "completed",
+  "contributor": "radTxNwRggY2Gcfyrw6YWgTLNPEQwKgKD4",
+  "artifact_hash": "8280755ebcd0744bb60d1c3629c319a73a488274dad6f2d1a611174a0e068fa6",
+  "stages": [
+    {
+      "stage": "verification",
+      "passed": true,
+      "reason": "Schema validation passed.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T23:33:41.079717Z",
+      "detail": {
+        "field_errors": []
+      }
+    },
+    {
+      "stage": "adjudication",
+      "passed": true,
+      "reason": "Artifact passed schema validation and all reviewer checks.",
+      "evidence_hash": "8280755ebcd0744bb60d1c3629c319a73a488274dad6f2d1a611174a0e068fa6",
+      "timestamp": "2026-03-19T23:33:41.079783Z",
+      "detail": {
+        "verdict": "pass",
+        "field_errors": [],
+        "schema_name": "DynamicArtifact"
+      }
+    },
+    {
+      "stage": "authorization",
+      "passed": true,
+      "reason": "Contributor is on the allowlist and authorization is current.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T23:33:41.079797Z",
+      "detail": {
+        "wallet_status": "authorized",
+        "wallet": "radTxNwRggY2Gcfyrw6YWgTLNPEQwKgKD4"
+      }
+    },
+    {
+      "stage": "payout",
+      "passed": true,
+      "reason": "Payout transaction constructed successfully.",
+      "evidence_hash": "8280755ebcd0744bb60d1c3629c319a73a488274dad6f2d1a611174a0e068fa6",
+      "timestamp": "2026-03-19T23:33:41.098184Z",
+      "detail": {
+        "dry_run": true
+      }
+    }
+  ],
+  "tx_blob": "1200002400000001201B05F5E0FF61D5038D7EA4C680000000000000000000000000005046540000000000FF04216C1D6C3C149729943242184351F1AD07A168400000000000000C7321EDE9BE0D5C5BD90D36DCEA2A58037CEACEFD7F6864ABA5CCC098621AA787263B9A744024E9DB131E7FB75AE44CC2C718DC7F13234A64C5B989A73620445EE6DF01EED1C1FF3E493551F931A0BA0569FFC51C687643C62D11AD5627B0416BFD1137CF0B8114FF04216C1D6C3C149729943242184351F1AD07A183143DBE1A230D232AC88E6903E4C3165092F9747610",
+  "tx_hash": null,
+  "dry_run": true,
+  "started_at": "2026-03-19T23:33:41.079691Z",
+  "completed_at": "2026-03-19T23:33:41.098190Z",
+  "error": null
+}

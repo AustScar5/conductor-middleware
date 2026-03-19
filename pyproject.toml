@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "conductor-middleware"
-version = "0.5.0"
+version = "0.6.0"
 description = "Schema-validated retry and reviewer-gating middleware for Task Node conductor/agent workflows"
 readme = "README.md"
 license = { text = "MIT" }
@@ -12,6 +12,9 @@ requires-python = ">=3.11"
 dependencies = [
     "pydantic>=2.0",
     "xrpl-py>=2.0",
+    "mcp>=1.0",
+    "uvicorn>=0.20",
+    "starlette>=0.20",
 ]
 keywords = [
     "conductor",
@@ -47,3 +50,6 @@ log_cli_level = "INFO"
 
 [tool.coverage.run]
 source = ["src/conductor_middleware"]
+
+[project.scripts]
+conductor-mcp = "conductor_middleware.mcp_server:main"

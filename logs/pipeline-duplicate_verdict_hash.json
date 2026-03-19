@@ -1,6 +1,6 @@
 {
   "disposition": "duplicate",
-  "contributor": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF",
+  "contributor": "rhgVHK4jj4q4yvoKiCNHqkvvHyxR4rMAEN",
   "artifact_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
   "stages": [
     {
@@ -8,7 +8,7 @@
       "passed": true,
       "reason": "Schema validation passed.",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T22:56:31.148677Z",
+      "timestamp": "2026-03-19T23:33:42.803975Z",
       "detail": {
         "field_errors": []
       }
@@ -18,7 +18,7 @@
       "passed": true,
       "reason": "Artifact passed schema validation and all reviewer checks.",
       "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
-      "timestamp": "2026-03-19T22:56:31.148723Z",
+      "timestamp": "2026-03-19T23:33:42.804009Z",
       "detail": {
         "verdict": "pass",
         "field_errors": [],
@@ -30,10 +30,10 @@
       "passed": true,
       "reason": "Contributor is on the allowlist and authorization is current.",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T22:56:31.148738Z",
+      "timestamp": "2026-03-19T23:33:42.804020Z",
       "detail": {
         "wallet_status": "authorized",
-        "wallet": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF"
+        "wallet": "rhgVHK4jj4q4yvoKiCNHqkvvHyxR4rMAEN"
       }
     },
     {
@@ -41,7 +41,7 @@
       "passed": false,
       "reason": "Verdict evidence_hash='3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d' has already been paid out. Duplicate submission rejected.",
       "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
-      "timestamp": "2026-03-19T22:56:31.148755Z",
+      "timestamp": "2026-03-19T23:33:42.804033Z",
       "detail": {
         "error": "duplicate_verdict"
       }
@@ -50,7 +50,7 @@
   "tx_blob": null,
   "tx_hash": null,
   "dry_run": true,
-  "started_at": "2026-03-19T22:56:31.148658Z",
-  "completed_at": "2026-03-19T22:56:31.148757Z",
+  "started_at": "2026-03-19T23:33:42.803958Z",
+  "completed_at": "2026-03-19T23:33:42.804036Z",
   "error": null
 }

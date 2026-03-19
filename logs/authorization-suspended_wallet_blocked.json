@@ -1,17 +1,17 @@
 {
   "scenario": "suspended_wallet_blocked",
-  "logged_at": "2026-03-19T22:56:29.531638+00:00",
+  "logged_at": "2026-03-19T23:33:40.776991+00:00",
   "auth_verdict": {
     "wallet_address": "0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef",
     "status": "suspended",
     "reason": "Contributor is suspended. Reason: repeated verification failures",
-    "timestamp": "2026-03-19T22:56:29.531588Z"
+    "timestamp": "2026-03-19T23:33:40.776951Z"
   },
   "adj_verdict": {
     "verdict": "fail",
     "reason": "unauthorized_contributor: Contributor is suspended. Reason: repeated verification failures (wallet=0xdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef, status=suspended)",
     "evidence_hash": "b9752b44ef161acbb9df3a3260ff5c5f4af6b11f3d787b797f9c876dbc9b67e3",
-    "timestamp": "2026-03-19T22:56:29.531633Z",
+    "timestamp": "2026-03-19T23:33:40.776987Z",
     "retry_eligible": false,
     "field_errors": [],
     "schema_name": "TaskOutput"

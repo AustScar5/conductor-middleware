@@ -1,14 +1,14 @@
 {
   "disposition": "blocked",
-  "contributor": "rrhyPzoMPAqopts9ctsS6cC4d33mBhqz9U",
-  "artifact_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+  "contributor": "rESrLWF91Y49g6BkKC6N5dn7UQDk8GRti9",
+  "artifact_hash": "8280755ebcd0744bb60d1c3629c319a73a488274dad6f2d1a611174a0e068fa6",
   "stages": [
     {
       "stage": "verification",
       "passed": true,
       "reason": "Schema validation passed.",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T23:33:42.662887Z",
+      "timestamp": "2026-03-19T23:33:41.119678Z",
       "detail": {
         "field_errors": []
       }
@@ -17,12 +17,12 @@
       "stage": "adjudication",
       "passed": true,
       "reason": "Artifact passed schema validation and all reviewer checks.",
-      "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
-      "timestamp": "2026-03-19T23:33:42.662924Z",
+      "evidence_hash": "8280755ebcd0744bb60d1c3629c319a73a488274dad6f2d1a611174a0e068fa6",
+      "timestamp": "2026-03-19T23:33:41.119721Z",
       "detail": {
         "verdict": "pass",
         "field_errors": [],
-        "schema_name": "TaskArtifact"
+        "schema_name": "DynamicArtifact"
       }
     },
     {
@@ -30,17 +30,17 @@
       "passed": false,
       "reason": "Wallet address is not on the contributor allowlist.",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T23:33:42.662935Z",
+      "timestamp": "2026-03-19T23:33:41.119733Z",
       "detail": {
         "wallet_status": "unauthorized",
-        "wallet": "rrhyPzoMPAqopts9ctsS6cC4d33mBhqz9U"
+        "wallet": "rESrLWF91Y49g6BkKC6N5dn7UQDk8GRti9"
       }
     }
   ],
   "tx_blob": null,
   "tx_hash": null,
   "dry_run": true,
-  "started_at": "2026-03-19T23:33:42.662864Z",
-  "completed_at": "2026-03-19T23:33:42.662937Z",
+  "started_at": "2026-03-19T23:33:41.119655Z",
+  "completed_at": "2026-03-19T23:33:41.119735Z",
   "error": null
 }

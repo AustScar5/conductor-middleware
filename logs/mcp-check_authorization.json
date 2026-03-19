@@ -1,0 +1,16 @@
+{
+  "authorized": {
+    "wallet_address": "radTxNwRggY2Gcfyrw6YWgTLNPEQwKgKD4",
+    "status": "authorized",
+    "reason": "Contributor is on the allowlist and authorization is current.",
+    "timestamp": "2026-03-19T23:33:41.163668Z",
+    "is_authorized": true
+  },
+  "unauthorized": {
+    "wallet_address": "rESrLWF91Y49g6BkKC6N5dn7UQDk8GRti9",
+    "status": "unauthorized",
+    "reason": "Wallet address is not on the contributor allowlist.",
+    "timestamp": "2026-03-19T23:33:41.163692Z",
+    "is_authorized": false
+  }
+}

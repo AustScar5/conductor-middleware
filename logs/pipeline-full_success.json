@@ -1,6 +1,6 @@
 {
   "disposition": "completed",
-  "contributor": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF",
+  "contributor": "rhgVHK4jj4q4yvoKiCNHqkvvHyxR4rMAEN",
   "artifact_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
   "stages": [
     {
@@ -8,7 +8,7 @@
       "passed": true,
       "reason": "Schema validation passed.",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T22:56:30.883823Z",
+      "timestamp": "2026-03-19T23:33:42.572712Z",
       "detail": {
         "field_errors": []
       }
@@ -18,7 +18,7 @@
       "passed": true,
       "reason": "Artifact passed schema validation and all reviewer checks.",
       "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
-      "timestamp": "2026-03-19T22:56:30.883889Z",
+      "timestamp": "2026-03-19T23:33:42.572761Z",
       "detail": {
         "verdict": "pass",
         "field_errors": [],
@@ -30,10 +30,10 @@
       "passed": true,
       "reason": "Contributor is on the allowlist and authorization is current.",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T22:56:30.883928Z",
+      "timestamp": "2026-03-19T23:33:42.572774Z",
       "detail": {
         "wallet_status": "authorized",
-        "wallet": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF"
+        "wallet": "rhgVHK4jj4q4yvoKiCNHqkvvHyxR4rMAEN"
       }
     },
     {
@@ -41,16 +41,16 @@
       "passed": true,
       "reason": "Payout transaction constructed successfully.",
       "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
-      "timestamp": "2026-03-19T22:56:30.918341Z",
+      "timestamp": "2026-03-19T23:33:42.591044Z",
       "detail": {
         "dry_run": true
       }
     }
   ],
-  "tx_blob": "1200002400000001201B05F5E0FF61D5038D7EA4C680000000000000000000000000005046540000000000C5AD69477161BDC7802BCA27C0DA7C6AB6CC46F868400000000000000C7321ED373E3129B07F85BF15BDE9B176FD3E5CB93B88B20F1E1DF28A9A53E9CBEBE7B17440C6F0582D5D6ADE8C10D0C24A9FC1CD4AE115F45930C56DF603F4FE06A875EEAAE91944FC5B477509E91F47F68232928795954E579122AD1A2D0EA5B5F287F80C8114C5AD69477161BDC7802BCA27C0DA7C6AB6CC46F88314B06F8EE2BF0BD6DABFAB6E095E1F99BCE12D3D58",
+  "tx_blob": "1200002400000001201B05F5E0FF61D5038D7EA4C680000000000000000000000000005046540000000000215D5BAE73E72E2C0A439C2828E50FDC1EE7A93B68400000000000000C7321ED5E0503A065EE580BC003DBD85E6187712AFB012CB4BB834F7DB3C49A8E7623FC7440F02B0F78193A6CA630403F288547D0100BB68FA4B857287C84CBFE0A36C9EFAC2BE65C3DD09B9926B5B53A781D75945ADECF27EB99C1CE25BA9E02BF7126FE0B8114215D5BAE73E72E2C0A439C2828E50FDC1EE7A93B83142860353A5B5398C33676D5A7D74EAFC8F8E7E1F6",
   "tx_hash": null,
   "dry_run": true,
-  "started_at": "2026-03-19T22:56:30.883782Z",
-  "completed_at": "2026-03-19T22:56:30.918349Z",
+  "started_at": "2026-03-19T23:33:42.572682Z",
+  "completed_at": "2026-03-19T23:33:42.591050Z",
   "error": null
 }

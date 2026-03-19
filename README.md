@@ -6,6 +6,167 @@ importable pipeline.
 
 ---
 
+## MCP Server
+
+The conductor pipeline is also exposed as a Model Context Protocol (MCP) server,
+letting any AI agent or external tool invoke the three core operations over
+stdio or HTTP-SSE without importing Python directly.
+
+### Architecture
+
+```
+  AI agent / external tool
+         │
+         │  MCP protocol (stdio or HTTP-SSE)
+         ▼
+  ┌─────────────────────────────────────────┐
+  │         MCP Server                       │
+  │  task-node-conductor                     │
+  │                                          │
+  │  ┌────────────────────────────────────┐  │
+  │  │  run_pipeline tool                  │  │
+  │  │  check_authorization tool           │  │
+  │  │  dry_run_payout tool                │  │
+  │  └───────────────┬────────────────────┘  │
+  └──────────────────┼──────────────────────┘
+                     │  Python function calls
+                     ▼
+  ┌──────────────────────────────────────────┐
+  │        TaskNodeConductor                  │
+  │                                           │
+  │  VerificationOracle                       │
+  │       ↓                                   │
+  │  AdjudicationOracle                       │
+  │       ↓                                   │
+  │  AuthorizationGate  ←  allowlist.json     │
+  │       ↓                                   │
+  │  PayoutTrigger      →  XRPL PFT Payment   │
+  └──────────────────────────────────────────┘
+```
+
+### Quickstart
+
+**Install:**
+```bash
+pip install git+https://github.com/AustScar5/conductor-middleware.git
+```
+
+**Configure:**
+```bash
+export XRPL_ISSUER_SEED="sYourIssuerSeed"
+export XRPL_PFT_ISSUER="rYourIssuerAddress"
+export CONDUCTOR_ALLOWLIST="allowlist.json"
+```
+
+**Start (stdio — for AI agent integration):**
+```bash
+python -m conductor_middleware.mcp_server
+# or:
+conductor-mcp
+```
+
+**Start (HTTP-SSE — for HTTP clients):**
+```bash
+conductor-mcp --transport sse --port 8000 --host 127.0.0.1
+```
+
+---
+
+### Tool reference
+
+#### `run_pipeline`
+
+Full verification → adjudication → authorization → payout flow.
+
+**Input:**
+```json
+{
+  "artifact": {"summary": "Analysis complete.", "confidence": 0.95},
+  "schema_fields": {"summary": "str", "confidence": "float"},
+  "contributor_wallet": "rContribXRPAddress...",
+  "task_id": "task-abc123",
+  "dry_run": true
+}
+```
+
+**Response (COMPLETED):**
+```json
+{
+  "disposition": "completed",
+  "contributor": "rContribXRPAddress...",
+  "artifact_hash": "3cbddd698cd2a4...",
+  "tx_blob": "1200002400000001...",
+  "tx_hash": null,
+  "dry_run": true,
+  "stages": [
+    {"stage": "verification",   "passed": true,  "reason": "Schema validation passed."},
+    {"stage": "adjudication",   "passed": true,  "reason": "Artifact passed all checks."},
+    {"stage": "authorization",  "passed": true,  "reason": "Contributor is on the allowlist."},
+    {"stage": "payout",         "passed": true,  "reason": "Payout transaction constructed."}
+  ]
+}
+```
+
+**Response (BLOCKED — unauthorized wallet):**
+```json
+{
+  "disposition": "blocked",
+  "tx_blob": null,
+  "stages": [
+    {"stage": "verification",  "passed": true},
+    {"stage": "adjudication",  "passed": true},
+    {"stage": "authorization", "passed": false,
+     "reason": "Wallet address is not on the contributor allowlist.",
+     "detail": {"wallet_status": "unauthorized"}}
+  ]
+}
+```
+
+---
+
+#### `check_authorization`
+
+**Input:**
+```json
+{"wallet_address": "rContribXRPAddress..."}
+```
+
+**Response:**
+```json
+{
+  "wallet_address": "rcontribxrpaddress...",
+  "status": "authorized",
+  "reason": "Contributor is on the allowlist and authorization is current.",
+  "is_authorized": true,
+  "timestamp": "2026-03-19T22:56:30Z"
+}
+```
+
+---
+
+#### `dry_run_payout`
+
+**Input:**
+```json
+{
+  "contributor_wallet": "rContribXRPAddress...",
+  "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f2..."
+}
+```
+
+**Response:**
+```json
+{
+  "tx_blob": "1200002400000001201B05F5E0FF6140...",
+  "contributor": "rContribXRPAddress...",
+  "pft_amount": "100",
+  "evidence_hash": "3cbddd698cd2a47c...",
+  "dry_run": true
+}
+```
+
+---
+
 ## Architecture
 
 ```

@@ -1,6 +1,6 @@
 {
   "disposition": "rejected",
-  "contributor": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF",
+  "contributor": "rhgVHK4jj4q4yvoKiCNHqkvvHyxR4rMAEN",
   "artifact_hash": null,
   "stages": [
     {
@@ -8,7 +8,7 @@
       "passed": false,
       "reason": "confidence: Field required; sources: Field required",
       "evidence_hash": null,
-      "timestamp": "2026-03-19T22:56:30.930036Z",
+      "timestamp": "2026-03-19T23:33:42.602809Z",
       "detail": {
         "field_errors": [
           "confidence: Field required",
@@ -20,7 +20,7 @@
   "tx_blob": null,
   "tx_hash": null,
   "dry_run": true,
-  "started_at": "2026-03-19T22:56:30.929997Z",
-  "completed_at": "2026-03-19T22:56:30.930039Z",
+  "started_at": "2026-03-19T23:33:42.602781Z",
+  "completed_at": "2026-03-19T23:33:42.602812Z",
   "error": null
 }

@@ -1,8 +1,8 @@
 {
   "test": "reviewer_rejection_redispatch",
-  "logged_at": "2026-03-19T22:56:29.673507+00:00",
+  "logged_at": "2026-03-19T23:33:41.446367+00:00",
   "terminal_result": {
-    "task_id": "d9df0d9d1d54",
+    "task_id": "1409c7e6216b",
     "status": "success",
     "output": {
       "label": "positive",
@@ -18,17 +18,17 @@
         "confidence": 0.88,
         "reasoning": "Clear markers."
       },
-      "reviewed_at": "2026-03-19T22:56:29.673493Z"
+      "reviewed_at": "2026-03-19T23:33:41.446353Z"
     },
     "attempt_state": {
-      "task_id": "d9df0d9d1d54",
+      "task_id": "1409c7e6216b",
       "attempt_count": 2,
       "history": [
         {
           "attempt": 1,
-          "task_id": "d9df0d9d1d54",
-          "dispatched_at": "2026-03-19T22:56:29.673424Z",
-          "responded_at": "2026-03-19T22:56:29.673436Z",
+          "task_id": "1409c7e6216b",
+          "dispatched_at": "2026-03-19T23:33:41.446259Z",
+          "responded_at": "2026-03-19T23:33:41.446278Z",
           "worker_status": "complete",
           "error": null,
           "oracle_verdict": {
@@ -38,7 +38,7 @@
               "reasoning: Field required"
             ],
             "validated_output": null,
-            "reviewed_at": "2026-03-19T22:56:29.673460Z"
+            "reviewed_at": "2026-03-19T23:33:41.446315Z"
           },
           "retry_decision": "retry",
           "backoff_applied_seconds": 0.0,
@@ -46,9 +46,9 @@
         },
         {
           "attempt": 2,
-          "task_id": "d9df0d9d1d54",
-          "dispatched_at": "2026-03-19T22:56:29.673479Z",
-          "responded_at": "2026-03-19T22:56:29.673485Z",
+          "task_id": "1409c7e6216b",
+          "dispatched_at": "2026-03-19T23:33:41.446339Z",
+          "responded_at": "2026-03-19T23:33:41.446345Z",
           "worker_status": "complete",
           "error": null,
           "oracle_verdict": {
@@ -59,7 +59,7 @@
               "confidence": 0.88,
               "reasoning": "Clear markers."
             },
-            "reviewed_at": "2026-03-19T22:56:29.673493Z"
+            "reviewed_at": "2026-03-19T23:33:41.446353Z"
           },
           "retry_decision": "terminate",
           "backoff_applied_seconds": 0.0,
@@ -68,6 +68,6 @@
       ],
       "total_attempts_made": 2
     },
-    "completed_at": "2026-03-19T22:56:29.673504Z"
+    "completed_at": "2026-03-19T23:33:41.446364Z"
   }
 }
