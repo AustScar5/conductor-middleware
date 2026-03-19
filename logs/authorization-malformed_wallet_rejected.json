@@ -1,0 +1,19 @@
+{
+  "scenario": "malformed_wallet_rejected",
+  "logged_at": "2026-03-19T04:07:50.496025+00:00",
+  "auth_verdict": {
+    "wallet_address": "not-a-wallet",
+    "status": "unauthorized",
+    "reason": "Malformed wallet address: wallet_address must start with '0x', got 'not-a-'\u2026",
+    "timestamp": "2026-03-19T04:07:50.495980Z"
+  },
+  "adj_verdict": {
+    "verdict": "fail",
+    "reason": "unauthorized_contributor: Malformed wallet address: wallet_address must start with '0x', got 'not-a-'\u2026 (wallet=not-a-wallet, status=unauthorized)",
+    "evidence_hash": "b9752b44ef161acbb9df3a3260ff5c5f4af6b11f3d787b797f9c876dbc9b67e3",
+    "timestamp": "2026-03-19T04:07:50.496021Z",
+    "retry_eligible": false,
+    "field_errors": [],
+    "schema_name": "TaskOutput"
+  }
+}

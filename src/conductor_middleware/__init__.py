@@ -40,6 +40,14 @@ from .models import (
 )
 from .oracle import VerificationOracle
 from .retry_engine import RetryEngine
+from .authorization import (
+    AllowlistConfig,
+    AuthorizationGate,
+    AuthorizationVerdict,
+    WalletEntry,
+    WalletStatus,
+    gated_adjudicate,
+)
 from .adjudication import (
     AdjudicationLog,
     AdjudicationOracle,
@@ -67,6 +75,13 @@ __all__ = [
     "VerificationOracle",
     # engine
     "RetryEngine",
+    # authorization
+    "AllowlistConfig",
+    "AuthorizationGate",
+    "AuthorizationVerdict",
+    "WalletEntry",
+    "WalletStatus",
+    "gated_adjudicate",
     # adjudication
     "AdjudicationLog",
     "AdjudicationOracle",
@@ -76,4 +91,4 @@ __all__ = [
     "VerdictCode",
 ]
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"

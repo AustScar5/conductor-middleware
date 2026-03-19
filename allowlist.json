@@ -1,0 +1,30 @@
+{
+  "_comment": "Conductor allowlist \u2014 edit entries to manage contributor access",
+  "allowlist": [
+    {
+      "wallet": "0xAABBCCDDEEFF00112233445566778899AABBCCDD",
+      "status": "authorized",
+      "label": "core-contributor-alpha",
+      "expires_at": null
+    },
+    {
+      "wallet": "0x1111111111111111111111111111111111111111",
+      "status": "authorized",
+      "label": "core-contributor-beta",
+      "expires_at": null
+    },
+    {
+      "wallet": "0xDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF",
+      "status": "suspended",
+      "label": "suspended-node-01",
+      "expires_at": null,
+      "suspension_reason": "repeated verification failures"
+    },
+    {
+      "wallet": "0xEEEE000000000000000000000000000000000000",
+      "status": "authorized",
+      "label": "temporary-contributor",
+      "expires_at": "2020-01-01T00:00:00Z"
+    }
+  ]
+}

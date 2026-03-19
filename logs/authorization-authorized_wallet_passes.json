@@ -1,0 +1,19 @@
+{
+  "scenario": "authorized_wallet_passes",
+  "logged_at": "2026-03-19T04:07:50.399683+00:00",
+  "auth_verdict": {
+    "wallet_address": "0xaabbccddeeff00112233445566778899aabbccdd",
+    "status": "authorized",
+    "reason": "Contributor is on the allowlist and authorization is current.",
+    "timestamp": "2026-03-19T04:07:50.399636Z"
+  },
+  "adj_verdict": {
+    "verdict": "pass",
+    "reason": "Artifact passed schema validation and all reviewer checks.",
+    "evidence_hash": "b9752b44ef161acbb9df3a3260ff5c5f4af6b11f3d787b797f9c876dbc9b67e3",
+    "timestamp": "2026-03-19T04:07:50.399677Z",
+    "retry_eligible": false,
+    "field_errors": [],
+    "schema_name": "TaskOutput"
+  }
+}

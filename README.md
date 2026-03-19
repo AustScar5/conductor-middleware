@@ -210,6 +210,94 @@ pyproject.toml
 
 ---
 
+## Conductor Integration
+
+Wire `AuthorizationGate` and `AdjudicationOracle` together in any conductor
+reward-dispatch pipeline with about 10 lines:
+
+```python
+from conductor_middleware import (
+    AuthorizationGate,
+    AdjudicationOracle,
+    AdjudicationLog,
+    gated_adjudicate,
+)
+from pydantic import BaseModel
+
+# Define the expected artifact schema for this task type
+class TaskArtifact(BaseModel):
+    summary:    str
+    confidence: float
+    sources:    list[str]
+
+# Load the contributor allowlist and wire the oracle
+gate   = AuthorizationGate("allowlist.json")   # JSON or TOML
+log    = AdjudicationLog(path="logs/adjudication.json")
+oracle = AdjudicationOracle(log=log)
+
+# In your reward-dispatch handler:
+verdict = gated_adjudicate(
+    gate=gate,
+    oracle=oracle,
+    wallet_address=contributor_wallet,   # from task submission
+    artifact=task_output,                # worker's completion artifact
+    schema=TaskArtifact,
+    task_id="task-abc123",
+)
+
+match verdict.verdict:
+    case "pass":
+        dispatch_reward(contributor_wallet, task_output)
+    case "retry":
+        redispatch_task(task_id, hint=verdict.reason)
+    case "fail":
+        # Check whether it was an auth block or a schema failure
+        if "unauthorized_contributor" in verdict.reason:
+            log_auth_violation(contributor_wallet, verdict.reason)
+        else:
+            escalate(verdict.field_errors)
+```
+
+### Allowlist config format
+
+**JSON** (`allowlist.json`):
+```json
+{
+  "allowlist": [
+    {"wallet": "0xAABB...CCDD", "status": "authorized", "label": "node-alpha"},
+    {"wallet": "0xDEAD...BEEF", "status": "suspended",
+     "suspension_reason": "repeated verification failures"}
+  ]
+}
+```
+
+**TOML** (`allowlist.toml`):
+```toml
+[[allowlist]]
+wallet = "0xAABB...CCDD"
+status = "authorized"
+label  = "node-alpha"
+
+[[allowlist]]
+wallet            = "0xDEAD...BEEF"
+status            = "suspended"
+suspension_reason = "repeated verification failures"
+```
+
+### Gate verdict status values
+
+| Status | Meaning | `is_authorized` |
+|---|---|---|
+| `authorized` | On allowlist, not expired | `True` |
+| `unauthorized` | Not on allowlist or malformed address | `False` |
+| `suspended` | On allowlist but explicitly suspended | `False` |
+| `expired` | Was authorized but `expires_at` is past | `False` |
+
+Only `authorized` wallets reach the `AdjudicationOracle`.
+All others receive an immediate `FAIL` verdict with `reason="unauthorized_contributor: ..."`.
+
+---
+
 ## Task Node Integration
 
 Any Task Node conductor can import the `AdjudicationOracle` and wire it as an

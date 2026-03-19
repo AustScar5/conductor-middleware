@@ -1,0 +1,17 @@
+# Conductor allowlist — TOML format
+
+[[allowlist]]
+wallet  = "0xAABBCCDDEEFF00112233445566778899AABBCCDD"
+status  = "authorized"
+label   = "core-contributor-alpha"
+
+[[allowlist]]
+wallet  = "0x1111111111111111111111111111111111111111"
+status  = "authorized"
+label   = "core-contributor-beta"
+
+[[allowlist]]
+wallet            = "0xDEADBEEFDEADBEEFDEADBEEFDEADBEEFDEADBEEF"
+status            = "suspended"
+label             = "suspended-node-01"
+suspension_reason = "repeated verification failures"
