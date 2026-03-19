@@ -210,6 +210,58 @@ pyproject.toml
 
 ---
 
+## Task Node Integration
+
+Any Task Node conductor can import the `AdjudicationOracle` and wire it as an
+Authorization Gate with about 10 lines of code:
+
+```python
+from conductor_middleware import AdjudicationOracle, AdjudicationLog, ReviewerPolicy
+from pydantic import BaseModel
+
+# 1. Define the expected artifact schema for this task type
+class DeliveryArtifact(BaseModel):
+    summary:    str
+    word_count: int
+    sources:    list[str]
+
+# 2. Optional domain rule — sources must not be empty
+def require_sources(obj: DeliveryArtifact) -> str | None:
+    if not obj.sources:
+        return "sources list must not be empty"
+
+# 3. Create oracle (attach a log for auditability)
+log    = AdjudicationLog(path="logs/adjudication.json")
+oracle = AdjudicationOracle(log=log)
+policy = ReviewerPolicy("require_sources", [require_sources])
+
+# 4. Call the gate — artifact comes from your worker agent
+verdict = oracle.adjudicate(
+    artifact=worker_output,
+    schema=DeliveryArtifact,
+    reviewer_policy=policy,
+    task_id="task-abc123",
+)
+
+# 5. Route on the verdict
+match verdict.verdict:
+    case "pass":
+        mark_task_complete(worker_output)
+    case "retry":
+        redispatch(worker, hint=verdict.reason)
+    case "fail":
+        escalate(verdict.reason, verdict.field_errors)
+
+# 6. Verify artifact integrity later (tamper detection)
+assert oracle.verify_integrity(worker_output, verdict.evidence_hash)
+```
+
+The `AdjudicationLog` writes a JSON audit trail to disk after every call.
+Each record stores the verdict, evidence hash, and timestamp so any artifact
+can be re-verified against its original hash at any time.
+
+---
+
 ## License
 
 MIT

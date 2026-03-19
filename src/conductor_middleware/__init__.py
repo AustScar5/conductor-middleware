@@ -40,6 +40,14 @@ from .models import (
 )
 from .oracle import VerificationOracle
 from .retry_engine import RetryEngine
+from .adjudication import (
+    AdjudicationLog,
+    AdjudicationOracle,
+    AdjudicationRecord,
+    AdjudicationVerdict,
+    ReviewerPolicy,
+    VerdictCode,
+)
 
 __all__ = [
     # models
@@ -59,6 +67,13 @@ __all__ = [
     "VerificationOracle",
     # engine
     "RetryEngine",
+    # adjudication
+    "AdjudicationLog",
+    "AdjudicationOracle",
+    "AdjudicationRecord",
+    "AdjudicationVerdict",
+    "ReviewerPolicy",
+    "VerdictCode",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"

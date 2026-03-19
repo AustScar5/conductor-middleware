@@ -1,0 +1,16 @@
+{
+  "scenario": "schema_invalid_artifact_fails",
+  "logged_at": "2026-03-19T00:20:03.180863+00:00",
+  "verdict": {
+    "verdict": "fail",
+    "reason": "Schema validation failed: 2 field error(s).",
+    "evidence_hash": "1dc81af3f3dbdace8ec51c7c804bcfbf513cfca05348e2eafb462c278d7703f1",
+    "timestamp": "2026-03-19T00:20:03.180855Z",
+    "retry_eligible": false,
+    "field_errors": [
+      "confidence: Field required",
+      "reasoning: Field required"
+    ],
+    "schema_name": "SentimentArtifact"
+  }
+}

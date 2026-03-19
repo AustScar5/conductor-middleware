@@ -1,0 +1,16 @@
+{
+  "scenario": "tampered_evidence_hash_detected",
+  "original_verdict": {
+    "verdict": "pass",
+    "reason": "Artifact passed schema validation and all reviewer checks.",
+    "evidence_hash": "eb14eae08ce5831d92ad73675adcce165025e527251903785b33eeb225e34da3",
+    "timestamp": "2026-03-19T00:20:03.202770Z",
+    "retry_eligible": false,
+    "field_errors": [],
+    "schema_name": "SentimentArtifact"
+  },
+  "integrity_checks": {
+    "original_matches": true,
+    "tampered_matches": false
+  }
+}
