@@ -1,0 +1,4 @@
+{
+  "blocked_by": "adjudication_oracle",
+  "reason": "Adjudication gate failed: verdict='fail'. Reason: Artifact passed all checks."
+}

@@ -1,0 +1,4 @@
+{
+  "blocked_by": "authorization_gate",
+  "reason": "Authorization gate failed: contributor 'rfvdqx1mfeqznqtuzzlpngks8f6tknfnlk' has status='unauthorized'. Reason: Contributor is on the allowlist."
+}

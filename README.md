@@ -212,6 +212,71 @@ pyproject.toml
 
 ## Conductor Integration
 
+Wire `PayoutTrigger` after `AuthorizationGate` and `AdjudicationOracle` for
+end-to-end reward settlement:
+
+```python
+from conductor_middleware import (
+    AuthorizationGate, AdjudicationOracle, AdjudicationLog,
+    PayoutTrigger, PayoutConfig, PayoutRequest,
+    gated_adjudicate,
+)
+
+# Configure XRPL credentials (or set env vars)
+gate   = AuthorizationGate("allowlist.json")
+log    = AdjudicationLog(path="logs/adjudication.json")
+oracle = AdjudicationOracle(log=log)
+payout = PayoutTrigger(config=PayoutConfig(
+    issuer_seed="sYourIssuerSeed",     # or set XRPL_ISSUER_SEED
+    pft_issuer="rYourIssuerAddress",   # or set XRPL_PFT_ISSUER
+))
+
+# In your task-completion handler:
+adj_verdict = gated_adjudicate(gate, oracle, contributor_wallet,
+                                artifact, MyArtifactSchema)
+
+result = payout.execute(
+    PayoutRequest(
+        adjudication_verdict=adj_verdict,
+        authorization_verdict=gate.gate_check(contributor_wallet),
+        contributor_wallet=contributor_wallet,
+        task_id="task-abc123",
+    ),
+    dry_run=False,   # True to get signed blob without submitting
+)
+print(result.tx_blob)   # hex-encoded signed XRPL Payment transaction
+```
+
+### Environment variables
+
+| Variable | Description | Default |
+|---|---|---|
+| `XRPL_ISSUER_SEED` | base58 family seed of the PFT-issuing wallet | — (required) |
+| `XRPL_PFT_ISSUER` | classic address of the PFT token issuer | — (required) |
+| `XRPL_PFT_CURRENCY` | currency code | `PFT` |
+| `XRPL_PFT_AMOUNT` | token units per passing verdict | `100` |
+| `XRPL_NODE_URL` | XRPL websocket node | `wss://xrplcluster.com` |
+| `XRPL_BASE_FEE_DROPS` | network fee in drops | `12` |
+
+### Idempotency guard
+
+`PayoutTrigger` maintains a duplicate-hash guard keyed on each verdict's
+`evidence_hash`. Submitting the same verdict twice raises `DuplicateVerdictError`
+before any transaction is constructed. Pass a `db_path` to persist the guard
+across process restarts:
+
+```python
+from conductor_middleware import IdempotencyStore, PayoutTrigger
+
+payout = PayoutTrigger(
+    store=IdempotencyStore(db_path="payout_guard.db"),
+)
+```
+
+---
+
+## Conductor Integration
+
 Wire `AuthorizationGate` and `AdjudicationOracle` together in any conductor
 reward-dispatch pipeline with about 10 lines:
 

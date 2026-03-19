@@ -1,8 +1,8 @@
 {
   "test": "transient_retry_recovery",
-  "logged_at": "2026-03-19T04:07:50.597450+00:00",
+  "logged_at": "2026-03-19T21:37:10.328621+00:00",
   "terminal_result": {
-    "task_id": "35846033fe65",
+    "task_id": "6a4022b76d5b",
     "status": "success",
     "output": {
       "label": "positive",
@@ -18,23 +18,23 @@
         "confidence": 0.91,
         "reasoning": "Recovered after retry."
       },
-      "reviewed_at": "2026-03-19T04:07:50.597433Z"
+      "reviewed_at": "2026-03-19T21:37:10.328604Z"
     },
     "attempt_state": {
-      "task_id": "35846033fe65",
+      "task_id": "6a4022b76d5b",
       "attempt_count": 3,
       "history": [
         {
           "attempt": 1,
-          "task_id": "35846033fe65",
-          "dispatched_at": "2026-03-19T04:07:50.597347Z",
-          "responded_at": "2026-03-19T04:07:50.597365Z",
+          "task_id": "6a4022b76d5b",
+          "dispatched_at": "2026-03-19T21:37:10.328513Z",
+          "responded_at": "2026-03-19T21:37:10.328535Z",
           "worker_status": "failed",
           "error": {
             "error_code": "TIMEOUT",
             "message": "Timed out on call 1 (simulated).",
             "attempt_count": 1,
-            "timestamp": "2026-03-19T04:07:50.597360Z",
+            "timestamp": "2026-03-19T21:37:10.328530Z",
             "detail": null,
             "is_transient": true
           },
@@ -45,15 +45,15 @@
         },
         {
           "attempt": 2,
-          "task_id": "35846033fe65",
-          "dispatched_at": "2026-03-19T04:07:50.597395Z",
-          "responded_at": "2026-03-19T04:07:50.597404Z",
+          "task_id": "6a4022b76d5b",
+          "dispatched_at": "2026-03-19T21:37:10.328560Z",
+          "responded_at": "2026-03-19T21:37:10.328571Z",
           "worker_status": "failed",
           "error": {
             "error_code": "TIMEOUT",
             "message": "Timed out on call 2 (simulated).",
             "attempt_count": 2,
-            "timestamp": "2026-03-19T04:07:50.597402Z",
+            "timestamp": "2026-03-19T21:37:10.328567Z",
             "detail": null,
             "is_transient": true
           },
@@ -64,9 +64,9 @@
         },
         {
           "attempt": 3,
-          "task_id": "35846033fe65",
-          "dispatched_at": "2026-03-19T04:07:50.597417Z",
-          "responded_at": "2026-03-19T04:07:50.597422Z",
+          "task_id": "6a4022b76d5b",
+          "dispatched_at": "2026-03-19T21:37:10.328585Z",
+          "responded_at": "2026-03-19T21:37:10.328592Z",
           "worker_status": "complete",
           "error": null,
           "oracle_verdict": {
@@ -77,7 +77,7 @@
               "confidence": 0.91,
               "reasoning": "Recovered after retry."
             },
-            "reviewed_at": "2026-03-19T04:07:50.597433Z"
+            "reviewed_at": "2026-03-19T21:37:10.328604Z"
           },
           "retry_decision": "terminate",
           "backoff_applied_seconds": 0.0,
@@ -86,6 +86,6 @@
       ],
       "total_attempts_made": 3
     },
-    "completed_at": "2026-03-19T04:07:50.597446Z"
+    "completed_at": "2026-03-19T21:37:10.328617Z"
   }
 }

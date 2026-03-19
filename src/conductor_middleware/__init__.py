@@ -40,6 +40,15 @@ from .models import (
 )
 from .oracle import VerificationOracle
 from .retry_engine import RetryEngine
+from .payout import (
+    DuplicateVerdictError,
+    IdempotencyStore,
+    PayoutBlockedError,
+    PayoutConfig,
+    PayoutRequest,
+    PayoutResult,
+    PayoutTrigger,
+)
 from .authorization import (
     AllowlistConfig,
     AuthorizationGate,
@@ -75,6 +84,14 @@ __all__ = [
     "VerificationOracle",
     # engine
     "RetryEngine",
+    # payout
+    "DuplicateVerdictError",
+    "IdempotencyStore",
+    "PayoutBlockedError",
+    "PayoutConfig",
+    "PayoutRequest",
+    "PayoutResult",
+    "PayoutTrigger",
     # authorization
     "AllowlistConfig",
     "AuthorizationGate",
@@ -91,4 +108,4 @@ __all__ = [
     "VerdictCode",
 ]
 
-__version__ = "0.3.0"
+__version__ = "0.4.0"

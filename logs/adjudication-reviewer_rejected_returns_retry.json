@@ -1,11 +1,11 @@
 {
   "scenario": "reviewer_rejected_returns_retry",
-  "logged_at": "2026-03-19T04:07:50.317631+00:00",
+  "logged_at": "2026-03-19T21:37:10.011712+00:00",
   "verdict": {
     "verdict": "retry",
     "reason": "Reviewer policy 'require_high_confidence' rejected: confidence 0.60 is below threshold 0.85",
     "evidence_hash": "72c35ddab8ff54f36414c4256738cac00c82af7a64827490359854e09810a028",
-    "timestamp": "2026-03-19T04:07:50.317622Z",
+    "timestamp": "2026-03-19T21:37:10.011702Z",
     "retry_eligible": true,
     "field_errors": [],
     "schema_name": "SentimentArtifact"
