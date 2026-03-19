@@ -1,0 +1,56 @@
+{
+  "disposition": "duplicate",
+  "contributor": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF",
+  "artifact_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+  "stages": [
+    {
+      "stage": "verification",
+      "passed": true,
+      "reason": "Schema validation passed.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T22:56:31.148677Z",
+      "detail": {
+        "field_errors": []
+      }
+    },
+    {
+      "stage": "adjudication",
+      "passed": true,
+      "reason": "Artifact passed schema validation and all reviewer checks.",
+      "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+      "timestamp": "2026-03-19T22:56:31.148723Z",
+      "detail": {
+        "verdict": "pass",
+        "field_errors": [],
+        "schema_name": "TaskArtifact"
+      }
+    },
+    {
+      "stage": "authorization",
+      "passed": true,
+      "reason": "Contributor is on the allowlist and authorization is current.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T22:56:31.148738Z",
+      "detail": {
+        "wallet_status": "authorized",
+        "wallet": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF"
+      }
+    },
+    {
+      "stage": "payout",
+      "passed": false,
+      "reason": "Verdict evidence_hash='3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d' has already been paid out. Duplicate submission rejected.",
+      "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+      "timestamp": "2026-03-19T22:56:31.148755Z",
+      "detail": {
+        "error": "duplicate_verdict"
+      }
+    }
+  ],
+  "tx_blob": null,
+  "tx_hash": null,
+  "dry_run": true,
+  "started_at": "2026-03-19T22:56:31.148658Z",
+  "completed_at": "2026-03-19T22:56:31.148757Z",
+  "error": null
+}

@@ -40,6 +40,12 @@ from .models import (
 )
 from .oracle import VerificationOracle
 from .retry_engine import RetryEngine
+from .pipeline import (
+    Disposition,
+    PipelineResult,
+    StageVerdict,
+    TaskNodeConductor,
+)
 from .payout import (
     DuplicateVerdictError,
     IdempotencyStore,
@@ -84,6 +90,11 @@ __all__ = [
     "VerificationOracle",
     # engine
     "RetryEngine",
+    # pipeline
+    "Disposition",
+    "PipelineResult",
+    "StageVerdict",
+    "TaskNodeConductor",
     # payout
     "DuplicateVerdictError",
     "IdempotencyStore",
@@ -108,4 +119,4 @@ __all__ = [
     "VerdictCode",
 ]
 
-__version__ = "0.4.0"
+__version__ = "0.5.0"

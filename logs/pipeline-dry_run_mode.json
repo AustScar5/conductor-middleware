@@ -1,0 +1,56 @@
+{
+  "disposition": "completed",
+  "contributor": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF",
+  "artifact_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+  "stages": [
+    {
+      "stage": "verification",
+      "passed": true,
+      "reason": "Schema validation passed.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T22:56:31.288215Z",
+      "detail": {
+        "field_errors": []
+      }
+    },
+    {
+      "stage": "adjudication",
+      "passed": true,
+      "reason": "Artifact passed schema validation and all reviewer checks.",
+      "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+      "timestamp": "2026-03-19T22:56:31.288286Z",
+      "detail": {
+        "verdict": "pass",
+        "field_errors": [],
+        "schema_name": "TaskArtifact"
+      }
+    },
+    {
+      "stage": "authorization",
+      "passed": true,
+      "reason": "Contributor is on the allowlist and authorization is current.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T22:56:31.288311Z",
+      "detail": {
+        "wallet_status": "authorized",
+        "wallet": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF"
+      }
+    },
+    {
+      "stage": "payout",
+      "passed": true,
+      "reason": "Payout transaction constructed successfully.",
+      "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+      "timestamp": "2026-03-19T22:56:31.321675Z",
+      "detail": {
+        "dry_run": true
+      }
+    }
+  ],
+  "tx_blob": "1200002400000001201B05F5E0FF61D5038D7EA4C680000000000000000000000000005046540000000000C5AD69477161BDC7802BCA27C0DA7C6AB6CC46F868400000000000000C7321ED373E3129B07F85BF15BDE9B176FD3E5CB93B88B20F1E1DF28A9A53E9CBEBE7B17440C6F0582D5D6ADE8C10D0C24A9FC1CD4AE115F45930C56DF603F4FE06A875EEAAE91944FC5B477509E91F47F68232928795954E579122AD1A2D0EA5B5F287F80C8114C5AD69477161BDC7802BCA27C0DA7C6AB6CC46F88314B06F8EE2BF0BD6DABFAB6E095E1F99BCE12D3D58",
+  "tx_hash": null,
+  "dry_run": true,
+  "started_at": "2026-03-19T22:56:31.288159Z",
+  "completed_at": "2026-03-19T22:56:31.321682Z",
+  "error": null
+}

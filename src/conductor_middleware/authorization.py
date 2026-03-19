@@ -54,20 +54,24 @@ from .adjudication import AdjudicationOracle, AdjudicationVerdict, ReviewerPolic
 
 # ── Wallet address validation ──────────────────────────────────────────────────
 
-# Accepts 0x-prefixed 40-hex-char Ethereum-style addresses.
-# Deliberately broad — does not enforce EIP-55 checksum so both lower and
-# upper-case addresses are accepted.
-_WALLET_RE = re.compile(r"^0x[0-9a-fA-F]{40}$")
+# Ethereum-style: 0x-prefixed 40-hex-char addresses
+_ETH_WALLET_RE = re.compile(r"^0x[0-9a-fA-F]{40}$")
+
+# XRP Ledger classic addresses: start with 'r', 25-34 base58 chars
+# (base58 alphabet: 123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz)
+_XRP_WALLET_RE = re.compile(r"^r[1-9A-HJ-NP-Za-km-z]{24,33}$")
 
 
 def _validate_wallet(address: str) -> str:
     """
     Normalise and validate a wallet address string.
 
-    Raises ``ValueError`` with a human-readable message on any of:
-      - non-string input
-      - wrong length / missing 0x prefix
-      - non-hex characters after 0x
+    Accepts two formats:
+      - Ethereum-style: 0x-prefixed 40-hex-char (case-insensitive)
+      - XRP Ledger classic: r-prefixed 25-34 base58 chars
+
+    Raises ``ValueError`` with a human-readable message on any invalid input.
+    Returns the normalised address (lowercase for ETH, unchanged for XRP).
     """
     if not isinstance(address, str):
         raise ValueError(
@@ -76,19 +80,30 @@ def _validate_wallet(address: str) -> str:
     stripped = address.strip()
     if not stripped:
         raise ValueError("wallet_address must not be empty or whitespace")
-    # Normalise prefix to lowercase before any checks so '0X...' is accepted
-    if len(stripped) >= 2:
-        stripped = "0x" + stripped[2:] if stripped[:2].lower() == "0x" else stripped
+
+    # XRP classic address — check before ETH so 'r' prefix is not confused
+    if stripped.startswith("r"):
+        if _XRP_WALLET_RE.match(stripped):
+            return stripped   # XRP addresses are case-sensitive; return as-is
+        raise ValueError(
+            f"wallet_address looks like an XRP classic address but is invalid "
+            f"(expected r + 24-33 base58 chars, got {stripped!r})"
+        )
+
+    # Ethereum-style: normalise '0X' prefix to '0x'
+    if len(stripped) >= 2 and stripped[:2].lower() == "0x":
+        stripped = "0x" + stripped[2:]
     if not stripped.startswith("0x"):
         raise ValueError(
-            f"wallet_address must start with '0x', got {stripped[:6]!r}…"
+            f"wallet_address must start with '0x' (Ethereum) or 'r' (XRP), "
+            f"got {stripped[:6]!r}…"
         )
-    if not _WALLET_RE.match(stripped):
+    if not _ETH_WALLET_RE.match(stripped):
         raise ValueError(
             f"wallet_address must be a 0x-prefixed 40-hex-character string "
             f"(got {len(stripped) - 2} hex chars in {stripped!r})"
         )
-    return stripped.lower()   # normalise to lowercase for comparison
+    return stripped.lower()
 
 
 # ── Enums and models ───────────────────────────────────────────────────────────

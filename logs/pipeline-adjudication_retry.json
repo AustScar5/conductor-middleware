@@ -1,0 +1,35 @@
+{
+  "disposition": "retry",
+  "contributor": "rHnuZx2fuhyYyBorg5QATAVYkT1tC91FCF",
+  "artifact_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+  "stages": [
+    {
+      "stage": "verification",
+      "passed": true,
+      "reason": "Schema validation passed.",
+      "evidence_hash": null,
+      "timestamp": "2026-03-19T22:56:30.940709Z",
+      "detail": {
+        "field_errors": []
+      }
+    },
+    {
+      "stage": "adjudication",
+      "passed": false,
+      "reason": "Reviewer policy 'high_confidence' rejected: confidence 0.92 is below threshold 0.95",
+      "evidence_hash": "3cbddd698cd2a47c6731b264fbe138f29d6718bad404812ad87f943a5c64b04d",
+      "timestamp": "2026-03-19T22:56:30.940753Z",
+      "detail": {
+        "verdict": "retry",
+        "field_errors": [],
+        "schema_name": "TaskArtifact"
+      }
+    }
+  ],
+  "tx_blob": null,
+  "tx_hash": null,
+  "dry_run": true,
+  "started_at": "2026-03-19T22:56:30.940686Z",
+  "completed_at": "2026-03-19T22:56:30.940756Z",
+  "error": null
+}
